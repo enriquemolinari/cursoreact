@@ -1,31 +1,38 @@
 import React, { Component } from "react";
 
-export default class TestAPI extends Component {
+export default class ListarPersonas extends Component {
   constructor(props) {
     super(props);
+    this.limpiar = this.limpiar.bind(this);
+    this.listarPersonas = this.listarPersonas.bind(this);
 
     this.state = {
       personas: [],
     };
-
-    this.traerPersonas = this.traerPersonas.bind(this);
   }
 
-  traerPersonas() {
+  listarPersonas() {
     fetch("http://localhost:1234/personas")
-      .then((response) => response.json())
+      .then((resp) => resp.json())
       .then((json) => {
         this.setState({
           personas: json.personas,
-          data: true,
+          resultado: json.result,
         });
       });
+  }
+
+  limpiar() {
+    this.setState({
+      personas: [],
+    });
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.traerPersonas}>Listas Personas</button>
+        <button onClick={this.listarPersonas}>Listar Personas</button>
+        <button onClick={this.limpiar}>Limpiar</button>
         <hr />
         <table>
           <thead>
@@ -38,7 +45,7 @@ export default class TestAPI extends Component {
           </thead>
           <tbody>
             {this.state.personas.map((p, index) => (
-              <tr key={index}>
+              <tr>
                 <td>{p.nombre}</td>
                 <td>{p.apellido}</td>
                 <td>{p.direccion && p.direccion.direccion}</td>

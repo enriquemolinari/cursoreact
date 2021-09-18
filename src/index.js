@@ -2,9 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import CountClick from "./CountClick";
 import "./index.css";
-import Persona from "./Persona";
+import ListarPersonas from "./ListarPersonas";
 import reportWebVitals from "./reportWebVitals";
-import TestAPI from "./TestAPI";
 
 let obj = {
   nombre: "Jorge",
@@ -15,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     {/*     <Persona persona={obj} /> */}
     {/* <CountClick /> */}
-    <TestAPI />
+    <ListarPersonas />
   </React.StrictMode>,
   document.getElementById("root")
 );
