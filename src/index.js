@@ -5,7 +5,6 @@ import "./index.css";
 import ListarPersonas from "./ListarPersonas";
 import reportWebVitals from "./reportWebVitals";
 import CrearPersona from "./CrearPersona";
-import TestAPIForm from "./TestAPIForm";
 
 let obj = {
   nombre: "Jorge",
