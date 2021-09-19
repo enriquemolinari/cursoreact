@@ -4,6 +4,8 @@ import CountClick from "./CountClick";
 import "./index.css";
 import ListarPersonas from "./ListarPersonas";
 import reportWebVitals from "./reportWebVitals";
+import CrearPersona from "./CrearPersona";
+import TestAPIForm from "./TestAPIForm";
 
 let obj = {
   nombre: "Jorge",
@@ -14,7 +16,8 @@ ReactDOM.render(
   <React.StrictMode>
     {/*     <Persona persona={obj} /> */}
     {/* <CountClick /> */}
-    <ListarPersonas />
+    {/* <ListarPersonas /> */}
+    <CrearPersona />
   </React.StrictMode>,
   document.getElementById("root")
 );

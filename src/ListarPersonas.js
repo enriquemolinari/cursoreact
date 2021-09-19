@@ -45,7 +45,7 @@ export default class ListarPersonas extends Component {
           </thead>
           <tbody>
             {this.state.personas.map((p, index) => (
-              <tr>
+              <tr key={index}>
                 <td>{p.nombre}</td>
                 <td>{p.apellido}</td>
                 <td>{p.direccion && p.direccion.direccion}</td>
